@@ -2,20 +2,13 @@
 	"compatibility_date": "2025-10-08",
 	"main": "src/server/index.ts",
 	"name": "jojomap-chat",
+	"account_id": "829921384c97e0dbbb34430e307d6b52",
 	"migrations": [
 		{
 			"new_sqlite_classes": ["Chat"],
 			"tag": "v1"
 		}
 	],
-	"assets": {
-		"directory": "./public",
-		"binding": "ASSETS",
-		"not_found_handling": "single-page-application"
-	},
-	"build": {
-		"command": "esbuild src/client/index.tsx --bundle --splitting --format=esm --platform=browser --outdir=public/dist"
-	},
 	"durable_objects": {
 		"bindings": [
 			{
@@ -24,6 +17,17 @@
 			}
 		]
 	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "jkcbikemap_db",
+			"database_id": "9140840a-3ad5-4834-bdbb-fa5dc2a4bf1a"
+		}
+	],
+	"routes": [
+		{ "pattern": "chat.jojomap.kcmo.xyz", "custom_domain": true },
+		{ "pattern": "chat.map.distorted.work", "custom_domain": true }
+	],
 	"observability": {
 		"enabled": true
 	},

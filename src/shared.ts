@@ -1,24 +1,19 @@
 export type ChatMessage = {
 	id: string;
-	content: string;
-	user: string;
-	role: "user" | "assistant";
+	sender: string;
+	ciphertext: string;
+	iv: string;
+	timestamp: string;
 };
 
 export type Message =
 	| {
 			type: "add";
 			id: string;
-			content: string;
-			user: string;
-			role: "user" | "assistant";
-	  }
-	| {
-			type: "update";
-			id: string;
-			content: string;
-			user: string;
-			role: "user" | "assistant";
+			sender: string;
+			ciphertext: string;
+			iv: string;
+			timestamp: string;
 	  }
 	| {
 			type: "all";
